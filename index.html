@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <title>Weather App Final Project</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form class="search" id="search">
+          <input
+            id="search-bar"
+            type="search"
+            placeholder="Enter a City..."
+            required
+          />
+          <input id="search-button" type="submit" value="Search" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-data">
+          <div>
+            <h1 id="city"></h1>
+            <div class="forcast">
+              <p>
+                <span id="date"></span>,
+                <span id="weather-details"></span>
+                <br />
+                Humidity:
+                <strong class="paragraph-details" id="humidity-detail"></strong
+                >, Wind:
+                <strong class="paragraph-details" id="wind-speed"></strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="weather-container">
+            <div id="emoji"></div>
+            <div class="weather" id="temperature"></div>
+            <div class="units">°F</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        This project was coded by
+        <a class="links" href="https://github.com/dilarainal" target="_blank"
+          >Dilara Inal,</a
+        >
+        is open-sourced on
+        <a
+          class="links"
+          href="https://github.com/dilarainal/weatherapp-challenge"
+          target="_blank"
+        >
+          GitHub</a
+        >
+        and hosted on
+        <a
+          class="links"
+          href="https://dilarasweatherapp.netlify.app"
+          target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

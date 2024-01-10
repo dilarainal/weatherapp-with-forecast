@@ -88,6 +88,30 @@ h1 {
   font-weight: 900;
 }
 
+.forecast-day {
+  font-size: 18px;
+  text-align: center;
+  color: rgb(158, 158, 158);
+}
+
+.forecast-emoji {
+  font-size: 65px;
+  text-align: center;
+}
+
+.forecast-temp {
+  font-size: 15px;
+  text-align: center;
+}
+
+.forecast-high {
+  color: rgb(240, 135, 170);
+}
+
+.forecast-low {
+  color: rgb(238, 174, 196);
+}
+
 footer {
   text-align: center;
   margin: 0 auto;

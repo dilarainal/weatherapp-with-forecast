@@ -1,4 +1,4 @@
-function updateForcast(response) {
+function updateForecast(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -42,7 +42,7 @@ function formatDate(date) {
 function searchCity(city) {
   let apiKey = "o79b0b278ad643abf38d0abtfa4f526c";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(updateForcast);
+  axios.get(apiUrl).then(updateForecast);
 }
 
 function citySearch(event) {
@@ -52,7 +52,31 @@ function citySearch(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thurs"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+      <div class=forecast-section>
+      <div class="forecast-day">${day}</div>
+      <div class="forecast-emoji">☀️</div>
+      <div class="forecast-temp">
+      <span class="forecast-high"><strong>80°F</strong></span>
+      <span class="forecast-low">75°F</span>
+      </div>
+      </div>
+    `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search");
 searchFormElement.addEventListener("submit", citySearch);
 
 searchCity("Rio");
+displayForecast();

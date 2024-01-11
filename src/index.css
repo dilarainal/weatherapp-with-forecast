@@ -53,7 +53,7 @@ h1 {
   font-size: 35px;
 }
 
-.forcast {
+.forecast {
   color: gray;
   font-size: 20px;
   font-weight: 500;
@@ -88,6 +88,12 @@ h1 {
   font-weight: 900;
 }
 
+#forecast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
 .forecast-day {
   font-size: 18px;
   text-align: center;
@@ -102,6 +108,8 @@ h1 {
 .forecast-temp {
   font-size: 15px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .forecast-high {
@@ -110,6 +118,7 @@ h1 {
 
 .forecast-low {
   color: rgb(238, 174, 196);
+  padding: 0 10px;
 }
 
 footer {

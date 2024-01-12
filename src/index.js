@@ -16,6 +16,8 @@ function updateForecast(response) {
   detailElement.innerHTML = response.data.condition.description;
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -52,7 +54,15 @@ function citySearch(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "o79b0b278ad643abf38d0abtfa4f526c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Sun", "Mon", "Tue", "Wed", "Thurs"];
   let forecastHtml = "";
 
@@ -78,5 +88,4 @@ function displayForecast() {
 let searchFormElement = document.querySelector("#search");
 searchFormElement.addEventListener("submit", citySearch);
 
-searchCity("Rio");
-displayForecast();
+searchCity("Cleveland");

@@ -101,8 +101,10 @@ h1 {
 }
 
 .forecast-emoji {
-  font-size: 65px;
-  text-align: center;
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
 }
 
 .forecast-temp {
